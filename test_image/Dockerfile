@@ -19,12 +19,12 @@ ONBUILD COPY src/ ${DOCROOT}/
 EXPOSE 8080
 
 # This stuff is needed to ensure a clean start
-RUN sed -i "s/Listen 80/Listen 8080/g" /etc/httpd/conf/httpd.conf
-RUN chgrp -R 0 /var/log/httpd /var/run/httpd && \
+RUN sed -i "s/Listen 80/Listen 8080/g" /etc/httpd/conf/httpd.conf && \
+    chgrp -R 0 /var/log/httpd /var/run/httpd && \
     chmod -R g=u /var/log/httpd /var/run/httpd 
 
 # Run as the root user
 USER 1001
 
-CMD /usr/sbin/httpd -DFOREGROUND
+#CMD /usr/sbin/httpd -DFOREGROUND
 
