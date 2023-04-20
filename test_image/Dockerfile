@@ -24,7 +24,7 @@ RUN sed -i "s/Listen 80/Listen 8080/g" /etc/httpd/conf/httpd.conf && \
     chmod -R g=u /var/log/httpd /var/run/httpd 
 
 # Run as the root user
-USER 1001
+USER root
 
 CMD /usr/sbin/httpd -DFOREGROUND
 
