@@ -26,3 +26,5 @@ RUN sed -i "s/LISTEN 80/LISTEN 8080/g" /etc/httpd/conf/httpd.conf && \
 # Run as the root user
 USER 1001
 
+CMD /usr/sbin/httpd -DFOREGROUND
+
